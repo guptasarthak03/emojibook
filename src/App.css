@@ -1,38 +1,95 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap');
+
+:root {
+  --primary-color: #7e22ce;
+  --secondary-color: #e9d5ff;
+  --dark-color: #404040;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Rubik', sans-serif;
+  color: var(--dark-color);
+}
+
+header {
+  background-color: var(--secondary-color);
+  min-height: 12vh;
+  text-align: center;
+  padding: 1.2rem 0.5rem;
+  border-radius: 0 0 25px 25px;
+}
+
+header h1,
+p {
+  margin: auto;
+}
+
+header p {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+main {
+  min-height: 69vh;
+  padding: 3rem 2vw;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+main .emoji-input {
+  width: 50%;
+  padding: 0.8rem 0.5rem;
+  font-family: 'Rubik', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.emoji-input:focus {
+  outline: none;
+  border: 2px solid var(--primary-color);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+main .emoji-output-container {
+  background-color: var(--primary-color);
+  max-width: 35vw;
+  min-width: 275px;
+  margin: 2rem auto;
+  padding: 3rem 0.5rem;
+  border-radius: 10px;
+}
+
+main .emoji-output-container p {
+  margin: 0;
+}
+
+.emoji-output-container .emoji-meaning {
+  font-size: 30px;
+  font-weight: 600;
   color: white;
+  margin-bottom: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+.main .emoji-output {
+  font-size: 35px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+footer {
+  background-color: var(--secondary-color);
+  border-radius: 25px 25px 0 0;
+  padding: 1.5rem 15vw;
+  text-align: center;
+}
+
+footer p {
+  margin: auto;
+}
+
+footer .footer-heading {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 1rem;
 }
