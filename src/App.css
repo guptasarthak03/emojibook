@@ -77,6 +77,12 @@ main .emoji-output-container p {
   font-size: 35px;
 }
 
+main .suggestions .emoji-item {
+  font-size: 34px;
+  margin: auto 8px;
+  cursor: pointer;
+}
+
 footer {
   background-color: var(--secondary-color);
   border-radius: 25px 25px 0 0;

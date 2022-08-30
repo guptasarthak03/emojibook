@@ -7,7 +7,11 @@ const App = () => {
     '😂': 'LOL',
     '😎': 'Cool, Savage',
     '😅': 'nervous smile, awkward smile',
+    '😶': 'Confused, Brain Fog',
+    '❤️': 'Heart',
   };
+
+  const emojiList = Object.keys(emojiDict);
 
   const defaultOutput = {
     title: 'Translation will come here 👇',
@@ -28,13 +32,20 @@ const App = () => {
   };
 
   const translateEmoji = userInput => {
+    // debugger;
     const output = emojiDict[userInput] || 'No Matches Found';
+    setInputValue(userInput);
     setOutputValue({ ...outputValue, title: output, emoji: userInput });
   };
 
-  useEffect(() => {
-    console.log(outputValue);
-  });
+  const onClickSuggestion = emoji => {
+    // console.log(emoji);
+    translateEmoji(emoji);
+  };
+
+  // useEffect(() => {
+  //   console.log(Object.keys(emojiDict));
+  // });
 
   return (
     <div>
@@ -47,7 +58,7 @@ const App = () => {
           maxLength={2}
           value={inputValue}
           onChange={onInputChange}
-          placeholder="Enter your emoji here.  example:😊"
+          placeholder="Enter an emoji here.  example:😊"
         ></input>
         <div className="emoji-output-container">
           <p className="emoji-meaning">
@@ -56,6 +67,17 @@ const App = () => {
           <p className="emoji-output">
             {outputValue.emoji || defaultOutput.emoji}
           </p>
+        </div>
+        <div className="suggestions">
+          {emojiList.map(emoji => (
+            <span
+              key={emoji}
+              className="emoji-item"
+              onClick={() => onClickSuggestion(emoji)}
+            >
+              {emoji}
+            </span>
+          ))}
         </div>
       </main>
       {/* <footer className="footer">
